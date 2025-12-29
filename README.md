@@ -92,5 +92,6 @@ https://github.com/FunIce1/LamaClearItems
 ## ❤️ Author
 
 **Lama**
+## Downloads
+https://github.com/FunIce1/LamaClearItems/releases
 
-Если у вас есть идеи, баг-репорты или предложения — создавайте Issue на GitHub.
