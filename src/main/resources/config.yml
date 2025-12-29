@@ -1,0 +1,131 @@
+# От Lama
+# Ip: play.lamacraft.ru
+# Версия: 1.17-1.21.8
+# Тгк - @lamabio и @lLamaInCraft
+
+# Основной интервал авто-очистки (в секундах)
+# Минимум: 10 секунд
+interval-seconds: 300
+
+# Предупреждения перед очисткой
+# За сколько секунд начинать предупреждать игроков
+prewarn-seconds: 60
+
+# Шаг предупреждений (каждые N секунд)
+# Пример: 60, 50, 40, 30...
+prewarn-step: 10
+
+# Финальный обратный отсчёт (1..N секунд)
+final-countdown-seconds: 5
+
+# Отправлять ли сообщения всем игрокам
+broadcast: true
+
+# Сообщения
+messages:
+  # Префикс плагина
+  prefix: "&6[LamaClear]&r "
+
+  # Предупреждение перед очисткой
+  # %time% - секунд до очистки
+  warn: "%prefix%&eОчистка через &c%time%&e сек."
+
+  # Сообщение после авто-очистки
+  # %items% - предметы
+  # %stands% — невидимые стойки
+  # %total% — всего удалено
+  done: "%prefix%&aУдалено: &b%items% предметов&a, &b%stands% невидимых стоек&a. Всего: &b%total%&a."
+
+  # Сообщение после ручной очистки
+  manual: "%prefix%&aРучная очистка выполнена. Всего удалено: &b%total%&a."
+
+  # Конфиг перезагружен
+  reloaded: "%prefix%&aКонфиг перезагружен."
+
+  # Нет прав
+  no-perms: "%prefix%&cНет прав."
+
+  # Отображение TPS
+  # %tps_1m%, %tps_5m%, %tps_15m%
+  tps: "%prefix%&eTPS: &a1m %tps_1m%&e | &a5m %tps_5m%&e | &a15m %tps_15m%"
+
+  # Анти-лаг уведомления
+  # Сообщение о найденном подозрительном чанке
+  lag_found: "%prefix%&cПодозрительный чанк: &e%world% %x% %z%&c | hoppers=%hoppers% hopperCarts=%hoppercarts% entities=%entities%"
+
+  # Сообщение о выполненном авто-действии
+  lag_action: "%prefix%&6Действие: &e%action%&6 в чанке &e%world% %x% %z%"
+
+# Фильтры
+filters:
+  # Список миров, где работает очистка и анти-лаг
+  # Пусто = все миры
+  enabled-worlds: []
+
+  # Не удалять предметы с кастомным названием
+  ignore-items-with-custom-name: false
+
+  # Не удалять светящиеся предметы
+  ignore-items-with-glow: false
+
+# Стойки для брони
+armor-stands:
+  # true — удалять ТОЛЬКО невидимые
+  # false — удалять ВСЕ
+  remove-invisible-only: true
+
+# Анти-лаг система (поиск лаг-машин)
+anti-lag:
+  # Включить анти-лаг
+  enabled: true
+
+  # Как часто проверять TPS и сканировать чанки (сек)
+  check-every-seconds: 10
+
+  # Если TPS (1 минута) ниже этого значения — запускаем анализ
+  tps-trigger-below: 18.0
+
+  # Максимум чанков за одну проверку
+  # Нужно, чтобы не усугубить лаги
+  scan-max-chunks-per-check: 120
+
+  # Пороги подозрительности чанка
+  thresholds:
+    # Хопперы (блоки)
+    hoppers: 64
+
+    # Вагонетки с хопперами
+    hopper-minecarts: 12
+
+    # Общее количество сущностей
+    entities: 180
+
+  # Уведомления
+  notify:
+    # Писать в консоль
+    console: true
+
+    # Писать администраторам в чат
+    admins-in-chat: true
+
+    # Право для получения уведомлений
+    admin-permission: "lamaclearitems.alert"
+
+  # Автоматические действия (ОСТОРОЖНО)
+  actions:
+    # Включить авто-действия
+    enabled: true
+
+    # Удалять вагонетки-хопперы
+    remove-hopper-minecarts: true
+
+    # Удалять предметы в подозрительном чанке
+    remove-items: true
+
+    # Удалять невидимые стойки
+    remove-invisible-armor-stands: true
+
+    # ОПАСНО!
+    # Ломает хопперы-блоки в чанке
+    # Может повредить фермы игроков
+    break-hopper-blocks: false

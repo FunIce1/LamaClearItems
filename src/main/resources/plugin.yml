@@ -1,0 +1,32 @@
+name: LamaClearItems
+version: 1.0.0
+main: dev.lama.lamaclearitems.LamaClearItems
+api-version: '1.13'
+author: Lama
+
+commands:
+  lamaclearitems:
+    description: Clears dropped items and invisible armor stands
+    usage: /lamaclearitems [reload|tps]
+    permission: lamaclearitems.use
+    aliases: [lci]
+  lamareload:
+    description: Reload LamaClearItems config
+    usage: /lamareload
+    permission: lamaclearitems.reload
+    aliases: [lreload, reload]
+  lamatps:
+    description: Show server TPS
+    usage: /lamatps
+    permission: lamaclearitems.tps
+    aliases: [ltps]
+
+permissions:
+  lamaclearitems.use:
+    default: op
+  lamaclearitems.reload:
+    default: op
+  lamaclearitems.tps:
+    default: op
+  lamaclearitems.alert:
+    default: op
