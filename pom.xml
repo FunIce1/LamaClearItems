@@ -44,7 +44,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Shade можно оставить: если добавишь зависимости, их можно зашить в jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
